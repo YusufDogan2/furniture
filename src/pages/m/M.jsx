@@ -1,24 +1,30 @@
 import { useFetch } from '../../hooks/useFetch';
 
 const M = () => {
-    const { data, isPending, error } = useFetch("http://localhost:3000/fornitures");
+    const { data, isPending, error } = useFetch("https://furniture-server-production.up.railway.app/api/furniture");
 
 
     return (
         <div>
             {isPending && <p>Loading...</p>}
             {error && <p>{error}</p>}
-            {data && <>{
-                data.map((forniture) => {
-                    if (forniture.size === "medium") {
-                        return (
-                            <div>
-                                {forniture.title}
-                            </div>
-                        );
-                    };
-                })
-            }
+            {data && <>
+                <div className='card-list' >
+                    {data.map((forniture) => {
+                        if (forniture.size === "medium") {
+                            return (
+                                <div className='card' >
+                                    <h1>{forniture.title}</h1>
+                                    <p>{forniture.room}</p>
+                                    <p>{forniture.size}</p>
+                                    <img className='pic' src={"https://furniture-server-production.up.railway.app/" + forniture.image} alt="asdf" />
+                                    <p>{forniture.text}</p>
+                                </div>
+                            );
+                        };
+                    })
+                    }
+                </div>
             </>}
         </div>
     );

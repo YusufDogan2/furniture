@@ -7,19 +7,16 @@ import './Create.css';
 
 const Create = () => {
 
-    const [title, setTitle] = useState("");
-    const [room, setRoom] = useState("");
-    const [text, setText] = useState("");
-    const [size, setSize] = useState("");
+
     const navigate = useNavigate();
 
-
-
-    const { postData, data, error } = useFetch("http://localhost:3000/fornitures", "POST");
+    const { postData, data, error } = useFetch("https://furniture-server-production.up.railway.app/api/furniture", "POST");
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        postData({ title, size, room, text });
+        const form = new FormData(e.target);
+        postData(form);
+
 
     };
 
@@ -36,28 +33,25 @@ const Create = () => {
                 <label>
                     <span>Titel</span>
                     <input
-                        onChange={(e) => setTitle(e.target.value)}
                         type="text"
-                        value={title}
+                        name="title"
                         required
                     />
                 </label>
                 <label>
                     <span>Room</span>
                     <input
-                        onChange={(e) => setRoom(e.target.value)}
-                        type="text"
-                        value={room}
+                        name="room"
                         required
                     />
+                </label>
+                <label>
                     <span>Size</span>
-                    <input
-                        onChange={(e) => setSize(e.target.value)}
-                        type="text"
-                        value={size}
-                        placeholder="large,medium or large"
-                        required
-                    />
+                    <select name="size">
+                        <option name="size" value="small">Small</option>
+                        <option name="size" value="medium">Medium</option>
+                        <option name="size" value="large">Laarge</option>
+                    </select>
                 </label>
                 <br />
                 <br />
@@ -67,13 +61,13 @@ const Create = () => {
                 <br />
                 <input
                     type="file"
-                    name="myImage"
+                    name="image"
+
                 />
                 <label>
                     <span>Description</span>
                     <textarea
-                        onChange={(e) => setText(e.target.value)}
-                        value={text}
+                        name="text"
                         required
                     />
                 </label>

@@ -1,0 +1,35 @@
+.card-list .card {
+    background: #fff;
+    color: #333;
+    padding: 20px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.card-list .card:hover {
+    transform: rotate(3deg);
+}
+
+.card-list .card h1 {
+    color: black;
+    margin-bottom: 20px;
+}
+
+.card-list .card p {
+    color: black;
+    font-size: 1.5em;
+}
+
+.card-list .card div {
+    color: #555;
+    font-size: 0.7em;
+    margin: 20px 0;
+    line-height: 1.5em;
+}
+
+.pic {
+    width: 30%;
+    height: auto;
+}
