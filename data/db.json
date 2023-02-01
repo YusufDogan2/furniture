@@ -1,0 +1,39 @@
+{
+  "fornitures": [
+    {
+      "id": "1",
+      "title": "Couch",
+      "size": "large",
+      "room": "living-room",
+      "text": "this is my fancy couch and i like that"
+    },
+    {
+      "id": "2",
+      "title": "table",
+      "size": "medium",
+      "room": "sloon",
+      "text": "this is my fancy table and i like that"
+    },
+    {
+      "id": "3",
+      "title": "cup",
+      "size": "small",
+      "room": "kitchen",
+      "text": "this is my fancy cup and i like that"
+    },
+    {
+      "title": "asdf",
+      "size": "large",
+      "room": "asdf",
+      "text": "asdf",
+      "id": "HrUW0zY"
+    },
+    {
+      "title": "test4",
+      "size": "large",
+      "room": "asdf",
+      "text": "asdf",
+      "id": "HsKpcA2"
+    }
+  ]
+}
