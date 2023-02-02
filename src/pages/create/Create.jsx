@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useFetch } from '../../hooks/useFetch';
 
@@ -10,7 +10,7 @@ const Create = () => {
 
     const navigate = useNavigate();
 
-    const { postData, data, error } = useFetch("https://furniture-server-production.up.railway.app/api/furniture", "POST");
+    const { postData, data } = useFetch("https://furniture-server-production.up.railway.app/api/furniture", "POST");
 
     const handleSubmit = (e) => {
         e.preventDefault();

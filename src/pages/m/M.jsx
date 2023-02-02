@@ -3,6 +3,9 @@ import { useFetch } from '../../hooks/useFetch';
 const M = () => {
     const { data, isPending, error } = useFetch("https://furniture-server-production.up.railway.app/api/furniture");
 
+    /* const getmedium = data.filter(item => {
+        return item.size === "medium";
+    }); */
 
     return (
         <div>
@@ -21,7 +24,7 @@ const M = () => {
                                     <p>{forniture.text}</p>
                                 </div>
                             );
-                        };
+                        }
                     })
                     }
                 </div>
